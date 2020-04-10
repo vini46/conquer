@@ -1,0 +1,18 @@
+{
+  "name": "conquer-layoff",
+  "version": "1.0.0",
+  "description": "crowdsourced data to get the details of available job openings during layoff seasion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "vinod baradwaj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "google-spreadsheet": "^3.0.10",
+    "nodemon": "^2.0.3"
+  }
+}
