@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { GoogleSpreadsheet } = require('google-spreadsheet');
-const creds = require('../../client_secret.json');
 const sheets = require('../../service/sheets');
 
 router.get('/', async (req, res) => {
