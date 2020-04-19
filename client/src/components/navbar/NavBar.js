@@ -60,7 +60,7 @@ class NavBar extends Component {
 
          <Link to="/search" className="nav-item nav-link">Search</Link>
          <Link to="/post" className="nav-item nav-link">Post</Link>
-         <Link to="/search" className="nav-item nav-link">Contact Us</Link>
+         <Link to="/contact" className="nav-item nav-link">Contact Us</Link>
       </ul>
     </div>
   </div>

@@ -5,7 +5,8 @@ import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import Search from './containers/Search';
 import Home from './containers/Home';
-import Post from './containers/Post'
+import Post from './containers/Post';
+import contact from './containers/Contact';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
               <Route exact path='/' component={Home}></Route>  
               <Route exact path='/search' component={Search}></Route>  
               <Route exact path='/post' component={Post}></Route>
+              <Route exact path='/contact' component={contact}></Route>
        </Switch> 
         {/* <Banner />
         <h1 className="display-1"> Lets Conquer The Layoff</h1>
