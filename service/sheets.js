@@ -1,10 +1,8 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
+const creds = require('../config/config');
 // const creds = require('../client_secret.json');
 
 const doc = new GoogleSpreadsheet('1pp6jc96anEZFueTsWtfF1uUMzBifzyettp1pduFVNSE');
-
-const client_email = 'sheets@conquer-layoff.iam.gserviceaccount.com'
-const private_key = process.env.key
 
 let sheets = function () {
     function constructJson(data) {
@@ -25,8 +23,8 @@ let sheets = function () {
 
     async function getAllData() {
         await doc.useServiceAccountAuth({
-        client_email: client_email,
-        private_key: private_key,
+        client_email: creds.config.client_email,
+        private_key: creds.config.private_key,
         });
     
         await doc.loadInfo(); 
