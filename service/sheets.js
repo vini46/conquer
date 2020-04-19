@@ -39,8 +39,8 @@ let sheets = function () {
     async function addData(newData) {
 
         await doc.useServiceAccountAuth({
-            client_email: creds.client_email,
-            private_key: creds.private_key,
+            client_email: creds.config.client_email,
+            private_key: creds.config.private_key,
             });
         
         await doc.loadInfo(); 
