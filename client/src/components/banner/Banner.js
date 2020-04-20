@@ -36,6 +36,7 @@ class Banner extends Component {
 
     render(){
         return (
+          <div className="banner">
             <ReactBootstrapCarousel
               animation={true}
               autoplay={this.state.autoplay}
@@ -48,8 +49,8 @@ class Banner extends Component {
               version={4}
             >
                  <div style={{ ...styles, backgroundColor: "white", opacity:0.5 }}>
-                    <div className="carousel-center">Globalization has created this interlocking fragility. At no time in the history of the universe has the cancellation of a Christmas order in New York meant layoffs in China.</div>
-                    <div className="carousel-caption">Nassim Nicholas Taleb</div>
+                    <div className="carousel-center">It does not matter how slowly you go as long as you do not stop.</div>
+                    <div className="carousel-caption">Confucius</div>
                 </div>
 
                 <div style={{ ...styles, backgroundColor: "white", opacity:0.5 }}>
@@ -66,54 +67,8 @@ class Banner extends Component {
                     <div className="carousel-center">An organization's ability to learn, and translate that learning into action rapidly, is the ultimate competitive advantage.</div>
                     <div className="carousel-caption">Jack Welch</div>
                 </div>
-              {/* <div style={{ height: 400 }}>
-                <img
-                  style={{ width: "100%", height: "500%" }}
-                  src={require("../../assets/1.jpg")}
-                />
-                <div className="carousel-caption">Image</div>
-              </div>
-
-              <div style={{ height: 400 }}>
-                <img
-                  style={{ width: "100%", height: "500%" }}
-                  src={require("../../assets/2.jpg")}
-                />
-                <div className="carousel-caption">Image</div>
-              </div>
-
-              <div style={{ height: 400 }}>
-                <img
-                  style={{ width: "100%", height: "500%" }}
-                  src={require("../../assets/3.png")}
-                />
-                <div className="carousel-caption">Image</div>
-              </div>
-              
-              <div style={{ height: 400 }}>
-                <img
-                  style={{ width: "100%", height: "500%" }}
-                  src={require("../../assets/4.jpg")}
-                />
-                <div className="carousel-caption">Image</div>
-              </div>
-
-              <div style={{ height: 400 }}>
-                <img
-                  style={{ width: "100%", height: "500%" }}
-                  src={require("../../assets/5.png")}
-                />
-                <div className="carousel-caption">Image</div>
-              </div>
-
-              <div style={{ height: 400 }}>
-                <img
-                  style={{ width: "100%", height: "500%" }}
-                  src={require("../../assets/6.jpg")}
-                />
-                <div className="carousel-caption">Image</div>
-              </div> */}
             </ReactBootstrapCarousel>
+          </div>
 
         );
     }

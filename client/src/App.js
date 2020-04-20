@@ -19,17 +19,6 @@ class App extends Component {
               <Route exact path='/post' component={Post}></Route>
               <Route exact path='/contact' component={contact}></Route>
        </Switch> 
-        {/* <Banner />
-        <h1 className="display-1"> Lets Conquer The Layoff</h1>
-        <p className="lead">
-        an initiative to help others with crowdsourcing. <br />
-
-        Our two cents to help the community deal with Covid19 pandemic.  <br />
-
-        <h3>Know any Opening?</h3>
-
-        Lets help others...
-        </p> */}
         <Footer />
       </div>
     );

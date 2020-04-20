@@ -14,7 +14,7 @@ class Contact extends Component {
     // </p>
     //   </div>
 
-    <div className="App">
+    <div className="contact">
     <h3>An initiative started by...</h3>
     <div className="card-deck">
   <div className="card">

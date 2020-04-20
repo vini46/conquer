@@ -19,7 +19,7 @@ class Search extends Component {
 
   render() {
     return (
-        <div className="App">
+        <div className="Search">
        
     <h3> Search For Jobs matching your needs </h3>
     <p>

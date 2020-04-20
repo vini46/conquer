@@ -18,6 +18,7 @@ class Table extends Component {
 
         return (
 
+          <div className="table">
             <BootstrapTable data={this.props.data} striped hover>
             <TableHeaderColumn isKey dataField='name' filter={ { type: 'TextFilter', delay: 1000 } }>Company Name</TableHeaderColumn>
             <TableHeaderColumn dataField='location' filter={ { type: 'TextFilter', delay: 1000 } }>Location</TableHeaderColumn>
@@ -27,6 +28,7 @@ class Table extends Component {
             <TableHeaderColumn dataField='email' dataFormat={this.MailFormatter} >Contact Mail Id</TableHeaderColumn>
             <TableHeaderColumn dataField='link' dataFormat={this.CellFormatter} >Job Link</TableHeaderColumn>
             </BootstrapTable>
+          </div>  
      
         );
     }

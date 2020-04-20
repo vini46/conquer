@@ -56,7 +56,7 @@ class Post extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="post">
                 <ReactNotification />
                 <h3> Post Jobs </h3>
                 <p>
