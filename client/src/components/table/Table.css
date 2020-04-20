@@ -1,3 +1,4 @@
-.table {
-    max-height:300px;
-}
+.table-horiz-scroll {
+    display: flex;
+  flex-direction: column;
+ }

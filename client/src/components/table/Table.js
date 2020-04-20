@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import 'react-bootstrap-table/dist/react-bootstrap-table.min.css';
+import './Table.css';
 
 class Table extends Component {
 
@@ -18,8 +18,8 @@ class Table extends Component {
 
         return (
 
-          <div className="table">
-            <BootstrapTable data={this.props.data} striped hover>
+          <div className="table-horiz-scroll">
+            <BootstrapTable data={this.props.data} printable striped hover height='600px' bodyStyle={{overflow: 'overlay'}}>
             <TableHeaderColumn isKey dataField='name' filter={ { type: 'TextFilter', delay: 1000 } }>Company Name</TableHeaderColumn>
             <TableHeaderColumn dataField='location' filter={ { type: 'TextFilter', delay: 1000 } }>Location</TableHeaderColumn>
             <TableHeaderColumn dataField='status'>Status</TableHeaderColumn>
