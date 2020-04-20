@@ -80,6 +80,14 @@ class PostForm extends Component {
     }
     this.props.onSubmit(userData);
 
+    this.setState({name: ''});
+    this.setState({location: ''});
+    this.setState({status: ''});
+    this.setState({roles: ''});
+    this.setState({person: ''});
+    this.setState({email: ''});
+    this.setState({link: ''});
+
   }
 
 
