@@ -6,8 +6,12 @@ import 'react-bootstrap-table/dist/react-bootstrap-table.min.css';
 class Table extends Component {
 
     CellFormatter(cell, row) {
-        console.log('value is: ', row.link);
         return (<a href={String(row.link)} target="_blank">{cell}</a>);
+      }
+
+      MailFormatter(cell, row) {
+        const val = "mailto:" + String(row.email);
+        return (<a href={val} target="_blank">{cell}</a>);
       }
 
     render() {
@@ -20,7 +24,7 @@ class Table extends Component {
             <TableHeaderColumn dataField='status'>Status</TableHeaderColumn>
             <TableHeaderColumn dataField='roles' filter={ { type: 'TextFilter', delay: 1000 } }>Available Job Roles</TableHeaderColumn>
             <TableHeaderColumn dataField='person'>Contact Person Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='email'>Contact Mail Id</TableHeaderColumn>
+            <TableHeaderColumn dataField='email' dataFormat={this.MailFormatter} >Contact Mail Id</TableHeaderColumn>
             <TableHeaderColumn dataField='link' dataFormat={this.CellFormatter} >Job Link</TableHeaderColumn>
             </BootstrapTable>
      
