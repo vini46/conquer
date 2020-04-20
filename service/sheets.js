@@ -9,11 +9,15 @@ let sheets = function () {
         let fullList = []
         data.forEach(value => {
             
-            const singleData = {'name': value.name,
-            'location':value.location,
-            'status': value.status,
-            'person': value.person,
-            'email': value.email};
+            const singleData = {
+                'name': value.name,
+                'location':value.location,
+                'status': value.status,
+                'roles': value.roles,
+                'person': value.person,
+                'email': value.email,
+                'link': value.link
+             };
         
             fullList.push(singleData);        
             
@@ -56,8 +60,10 @@ let sheets = function () {
             name: newData.name,
             location: newData.location,
             status: newData.status,
+            roles: newData.roles,
             person: newData.person,
-            email: newData.email
+            email: newData.email,
+            link: newData.link
         }
 
         await sheet.addRow(newEntry);

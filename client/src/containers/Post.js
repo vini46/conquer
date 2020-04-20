@@ -11,8 +11,10 @@ class Post extends Component {
             name: data.name,
             location: data.location,
             status: data.status,
+            roles: data.roles,
             person: data.person,
-            email: data.email
+            email: data.email,
+            link: data.link
         })
         .then( (res) => {
             console.log('success: ', res.data.msg);
@@ -23,6 +25,7 @@ class Post extends Component {
             this.setState({msg: 'Something went wrong, please update correct data'});
           });
 
+    console.log('form value is: ', data);
 
     }
 

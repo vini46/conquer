@@ -1,6 +1,19 @@
 import React, {Component} from 'react';
+import Select from 'react-select';
 import './PostForm.css';
 
+const roles = [
+  { value: 'SDE', label: 'SDE' },
+  { value: 'SDET', label: 'SDET' },
+  { value: 'DevOps', label: 'DevOps' },
+  { value: 'HR', label: 'HR' },
+  { value: 'Architect', label: 'Architect' },
+  { value: 'Dev_Manager', label: 'Dev_Manager' },
+  { value: 'QA_Manager', label: 'QA_Manager' },
+  { value: 'BA', label: 'BA' },
+  { value: 'PMO', label: 'PMO' },
+];
+ 
 
 class PostForm extends Component {
 
@@ -10,8 +23,10 @@ class PostForm extends Component {
       name: '',
       location: '',
       status: '',
+      roles: '',
       person: '',
-      email: ''
+      email: '',
+      link: ''
     };
 
   }
@@ -34,16 +49,34 @@ class PostForm extends Component {
     this.setState({email: event.target.value});
   }
 
+  handleLinkChange(event) {
+    this.setState({link: event.target.value});
+  }
+
+  handleRolesChange = selectedOption => {
+    const selectedValue = [];
+    selectedOption.map( (key) => {
+      console.log(key.value);
+      selectedValue.push(key.value);
+    });
+    console.log('array value: ', selectedValue);
+    this.setState({roles: selectedValue});
+  };
+
   handleSubmit = event => {
 
     event.preventDefault();
+
+    console.log('role value is: ', this.state.roles);
 
     const userData = {
       name: this.state.name,
       location: this.state.location,
       status: this.state.status,
+      roles: this.state.roles.join(),
       person: this.state.person,
-      email: this.state.email
+      email: this.state.email,
+      link: this.state.link
     }
     this.props.onSubmit(userData);
 
@@ -77,6 +110,20 @@ class PostForm extends Component {
         </div>
         <div className="form-row">
           <div className="form-group col-md-12">
+          <label>Available Job Roles</label>
+            <Select
+                isMulti
+                name="roles"
+                options={roles}
+                className="basic-multi-select"
+                onChange = {event => this.handleRolesChange(event)}
+                classNamePrefix="select"
+              />
+
+          </div>
+        </div>
+        <div className="form-row">
+          <div className="form-group col-md-12">
             <label>Contact Person Name</label>
             <input type="text" required className="form-control" id="person" value={this.state.person} required onChange={event => this.handlePersonChange(event)}/>
           </div>
@@ -84,7 +131,13 @@ class PostForm extends Component {
         <div className="form-group col-md-12">
 
           <label>Contact Email Id</label>
-          <input type="email" required className="form-control" value={this.state.email} id="email" required onChange={event => this.handleEmailChange(event)}/>
+          <input type="email" className="form-control" value={this.state.email} id="email" required onChange={event => this.handleEmailChange(event)}/>
+        </div>
+
+        <div className="form-group col-md-12">
+
+          <label>Job Link</label>
+          <input type="text" className="form-control" value={this.state.link} id="link" required onChange={event => this.handleLinkChange(event)}/>
         </div>
       </div>
       <button type="submit" className="btn btn-primary">Post</button>
